@@ -3,138 +3,198 @@
 <title>Hermes Office — Agen Nyata</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:#0d0d12;color:#e6e6f0;padding:24px}
-.wrap{max-width:1100px;margin:0 auto}
-header{border-bottom:2px solid #2a2a35;padding-bottom:14px;margin-bottom:20px}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0d0d12;color:#e6e6f0;padding:22px}
+.wrap{max-width:1200px;margin:0 auto}
+header{border-bottom:2px solid #2a2a35;padding-bottom:14px;margin-bottom:18px}
 header h1{font-size:22px} header h1 span{color:#8b5cf6}
 header .sub{color:#8a8a9a;font-size:13px;margin-top:4px}
-.stats{display:flex;gap:14px;flex-wrap:wrap;margin:14px 0 22px}
+.stats{display:flex;gap:14px;flex-wrap:wrap;margin:14px 0 20px}
 .stat{background:#16161f;border:1px solid #26262f;border-radius:10px;padding:10px 16px;font-size:13px}
 .stat b{font-size:18px;display:block;color:#c4b5fd}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.card{background:#13131c;border:1px solid #24242e;border-left:4px solid var(--c);border-radius:12px;padding:14px}
-.card-head{display:flex;gap:10px;align-items:center;margin-bottom:10px}
-.emoji{font-size:26px}
-.hd{flex:1} .name{font-weight:700;font-size:15px} .desc{font-size:12px;color:#9a9aac}
-.status{font-size:14px}
-.meta{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:#bdbdcd;margin-bottom:8px}
-.meta span{background:#1d1d28;padding:3px 8px;border-radius:6px}
-.title{font-size:13px;font-style:italic;color:#cfcfe0;margin-bottom:8px;min-height:18px}
-.times{font-size:11px;color:#77778a;margin-bottom:8px}
-.tools{display:flex;flex-direction:column;gap:5px}
-.tool{font-size:11px;background:#0f0f16;border:1px solid #1f1f2a;border-radius:6px;padding:5px 8px;overflow:hidden}
-.tname{color:#8b5cf6;font-weight:700;margin-right:6px}
+.board{display:flex;flex-wrap:wrap;gap:22px;justify-content:center}
+.desk{width:230px;background:#13131c;border:1px solid #23232e;border-top:3px solid var(--c);border-radius:12px;padding:12px;text-align:center}
+.stage{position:relative;height:170px;width:100%;background:radial-gradient(ellipse at 50% 80%,#1a1a26,#13131c);border-radius:8px;overflow:hidden;border:1px solid #1e1e2a}
+.bubble{position:absolute;top:6px;left:50%;transform:translateX(-50%);max-width:90%;background:#1c1c28;border:1px solid #333346;color:#d7d7e8;font-size:10px;padding:3px 8px;border-radius:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index:2}
+.char{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);height:150px;image-rendering:pixelated}
+.deskline{position:absolute;bottom:6px;left:8%;width:84%;height:8px;background:#2c2c3a;border-radius:3px}
+.tag{margin-top:8px;font-weight:700;font-size:13px}
+.tag .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.desc{font-size:11px;color:#9a9aac;margin-top:2px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;font-size:11px;color:#bdbdcd;margin:8px 0}
+.meta span{background:#1d1d28;padding:2px 6px;border-radius:5px}
+.mini{font-size:10px;color:#6f6f82;margin-bottom:6px}
+.tools{display:flex;flex-direction:column;gap:4px;text-align:left}
+.tool{font-size:10px;background:#0f0f16;border:1px solid #1f1f2a;border-radius:5px;padding:4px 6px;overflow:hidden}
+.tname{color:#8b5cf6;font-weight:700;margin-right:5px}
 .tcontent{color:#9a9aac;font-family:monospace}
-footer{margin-top:22px;font-size:11px;color:#55556a;border-top:1px solid #1f1f2a;padding-top:10px}
+footer{margin-top:24px;font-size:11px;color:#55556a;border-top:1px solid #1f1f2a;padding-top:10px;text-align:center}
 </style></head><body><div class="wrap">
 <header>
-  <h1>🏢 Hermes <span>Office</span></h1>
-  <div class="sub">Agen-agen Hermes nyata per topik grup · dari state.db · bukan simulasi</div>
+  <h1>🏢 Hermes <span>Office</span> — Pixel Art</h1>
+  <div class="sub">Agen-agen Hermes nyata per topik grup · dari state.db · tiap orang = 1 agent di meja + aktivitas aslinya</div>
   <div class="stats">
-    <div class="stat">Agen<b>14</b></div>
-    <div class="stat">Total pesan<b>932</b></div>
-    <div class="stat">Total tool-call<b>414</b></div>
-    <div class="stat">Generate<b>2026-08-27 15:12:29</b></div>
+    <div class="stat">Orang di kantor<b>13</b></div>
+    <div class="stat">Total pesan<b>919</b></div>
+    <div class="stat">Total tool-call<b>408</b></div>
+    <div class="stat">Diupdate<b>2026-08-27 15:19</b></div>
   </div>
 </header>
-<div class="grid">
-        <div class="card" style="--c:#80ed99">
-          <div class="card-head"><span class="emoji">🎁</span><div class="hd"><div class="name">FLOP Airdrop</div><div class="desc">Airdrop / Testnet</div></div><span class="status">🟢</span></div>
-          <div class="meta"><span>💬 10 pesan</span><span>🛠 4 tool</span><span>🧠 ox-alpha</span></div>
-          <div class="title">“Langkah Berikutnya Kontribusi FLOP”</div>
-          <div class="times">aktif 2026-08-26 04:32 · status: aktif</div>
-          <div class="tools"><div class="tool"><span class="tname">read_file</span><span class="tcontent">{&quot;content&quot;: &quot;1|&lt;div align=\&quot;center\&quot;&gt;\n2|\n3|# Technocore DID Starter\</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;total 60\ndrwxr-xr-x  5 hermes hermes    12 Aug 26 04:31 .</span></div><div class="tool"><span class="tname">cronjob</span><span class="tcontent">{   &quot;success&quot;: true,   &quot;count&quot;: 4,   &quot;jobs&quot;: [     {       &quot;job_id&quot;: &quot;</span></div><div class="tool"><span class="tname">read_file</span><span class="tcontent">{&quot;content&quot;: &quot;1|# Catatan Kontribusi $FLOP / Technocore (jangan dipubli</span></div></div>
-        </div>
-        <div class="card" style="--c:#f72585">
-          <div class="card-head"><span class="emoji">📰</span><div class="hd"><div class="name">Berita</div><div class="desc">Berita AI/Tech</div></div><span class="status">🟢</span></div>
-          <div class="meta"><span>💬 73 pesan</span><span>🛠 31 tool</span><span>🧠 ox-alpha</span></div>
-          <div class="title">“Penggunaan AI DeepSeek oleh Hacker China”</div>
-          <div class="times">aktif 2026-08-25 16:08 · status: aktif</div>
-          <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;243&quot;, &quot;exit_code&quot;: 0, &quot;error&quot;: null}</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;Mystery Ox Alpha Model Revealed To Be From Chinese Lab Z.A</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;China’s Z.AI made Ox Alpha stealth model that rivals DeepS</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;edge_ox 5241\noc_ox 5279&quot;, &quot;exit_code&quot;: 0, &quot;error&quot;: null}</span></div></div>
-        </div>
-        <div class="card" style="--c:#b0c4b1">
-          <div class="card-head"><span class="emoji">🔬</span><div class="hd"><div class="name">Riset</div><div class="desc">Riset Crypto</div></div><span class="status">🟢</span></div>
-          <div class="meta"><span>💬 230 pesan</span><span>🛠 103 tool</span><span>🧠 deepseek-v4-flash-0731</span></div>
-          <div class="title">“Coba Lagi Setelah Kegagalan”</div>
-          <div class="times">aktif 2026-08-25 02:31 · status: aktif</div>
-          <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;=== VIRTUAL (virtual-protocol) rank 107 ===\n  harga $0.75</span></div><div class="tool"><span class="tname">write_file</span><span class="tcontent">{&quot;bytes_written&quot;: 3402, &quot;dirs_created&quot;: true, &quot;lint&quot;: {&quot;status&quot;: &quot;ok&quot;,</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;virtual-protocol | VIRTUAL | Virtuals Protocol | rank 108\</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;=== METEORA | harga kini $0.2127 | RSI 60.1 ===\n  Resista</span></div></div>
-        </div>
-        <div class="card" style="--c:#4cc9f0">
-          <div class="card-head"><span class="emoji">🐦</span><div class="hd"><div class="name">X</div><div class="desc">X @lahilapagi</div></div><span class="status">🟢</span></div>
-          <div class="meta"><span>💬 120 pesan</span><span>🛠 56 tool</span><span>🧠 ox-alpha</span></div>
-          <div class="title">“Accessing Shared X Post Link”</div>
-          <div class="times">aktif 2026-08-24 23:00 · status: aktif</div>
-          <div class="tools"><div class="tool"><span class="tname">memory</span><span class="tcontent">{&quot;success&quot;: true, &quot;done&quot;: true, &quot;target&quot;: &quot;memory&quot;, &quot;usage&quot;: &quot;95% — 2,</span></div><div class="tool"><span class="tname">memory</span><span class="tcontent">{&quot;success&quot;: false, &quot;error&quot;: &quot;Operation 1 (replace): no entry matched &#x27;</span></div><div class="tool"><span class="tname">patch</span><span class="tcontent">{&quot;success&quot;: true, &quot;diff&quot;: &quot;--- a//opt/data/technocore-did-starter/RECO</span></div><div class="tool"><span class="tname">cronjob</span><span class="tcontent">{   &quot;success&quot;: true,   &quot;job&quot;: {     &quot;job_id&quot;: &quot;30b8772033e0&quot;,     &quot;nam</span></div></div>
-        </div>
-        <div class="card" style="--c:#ef476f">
-          <div class="card-head"><span class="emoji">🎬</span><div class="hd"><div class="name">Konten</div><div class="desc">YouTube / Konten</div></div><span class="status">🟢</span></div>
-          <div class="meta"><span>💬 308 pesan</span><span>🛠 137 tool</span><span>🧠 ox-alpha</span></div>
-          <div class="title">“Analisis Highlight Dokumenter BlackRock”</div>
-          <div class="times">aktif 2026-08-22 05:30 · status: aktif</div>
-          <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;copied&quot;, &quot;exit_code&quot;: 0, &quot;error&quot;: null}</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;-rw-r--r-- 1 hermes hermes 15846966 Aug 26 05:25 /opt/data</span></div><div class="tool"><span class="tname">vision_analyze</span><span class="tcontent">Image loaded into your context — you can see it natively now. Use your</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;== BIU_clip1.mp4\nwidth=1080\nheight=1920\nduration=69.069</span></div></div>
-        </div>
-        <div class="card" style="--c:#ff9e00">
-          <div class="card-head"><span class="emoji">📡</span><div class="hd"><div class="name">Berita AI</div><div class="desc">Monitor Berita</div></div><span class="status">🟢</span></div>
-          <div class="meta"><span>💬 38 pesan</span><span>🛠 16 tool</span><span>🧠 ox-alpha</span></div>
-          <div class="title">“Buat ulang topik berita AI terhapus”</div>
-          <div class="times">aktif 2026-08-21 17:20 · status: aktif</div>
-          <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;📰 **10 Berita AI/Tech Terbaik — Ide Konten X**\n_(pantauan</span></div><div class="tool"><span class="tname">patch</span><span class="tcontent">{&quot;success&quot;: true, &quot;diff&quot;: &quot;--- a//opt/data/home/.hermes/scripts/techne</span></div><div class="tool"><span class="tname">patch</span><span class="tcontent">{&quot;success&quot;: true, &quot;diff&quot;: &quot;--- a//opt/data/home/.hermes/scripts/techne</span></div><div class="tool"><span class="tname">patch</span><span class="tcontent">{&quot;success&quot;: true, &quot;diff&quot;: &quot;--- a//opt/data/home/.hermes/scripts/techne</span></div></div>
-        </div>
-        <div class="card" style="--c:#6c757d">
-          <div class="card-head"><span class="emoji">💼</span><div class="hd"><div class="name">thr 124</div><div class="desc">Topik</div></div><span class="status">🟢</span></div>
-          <div class="meta"><span>💬 20 pesan</span><span>🛠 8 tool</span><span>🧠 ling-3.0-flash</span></div>
-          <div class="title">“Klarifikasi Bahas Nomor Satu”</div>
-          <div class="times">aktif 2026-08-21 06:01 · status: aktif</div>
-          <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;no cron output dir\n./scripts/technews_monitor.py\n./home/</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;Error: &lt;urlopen error Remote end closed connection without</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;&lt;!doctype html&gt;&lt;html lang=\&quot;en-US\&quot; dir=\&quot;ltr\&quot;&gt;&lt;head&gt;&lt;bas</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;&quot;, &quot;exit_code&quot;: 56, &quot;error&quot;: null}</span></div></div>
-        </div>
-        <div class="card" style="--c:#ffd166">
-          <div class="card-head"><span class="emoji">🛠️</span><div class="hd"><div class="name">kitaberkahteknik</div><div class="desc">Web Service AC</div></div><span class="status">🟢</span></div>
-          <div class="meta"><span>💬 44 pesan</span><span>🛠 19 tool</span><span>🧠 ox-alpha</span></div>
-          <div class="title">“Akses Repo GitHub Berkah Teknik”</div>
-          <div class="times">aktif 2026-08-21 05:37 · status: aktif</div>
-          <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;[main 0fd0b8b] Rekap pendapatan ikut periode cut off 26-25</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;26 Jul  -&gt; 2026-07 | 26 Jul s/d 25 Agu 2026\n10 Agu  -&gt; 20</span></div><div class="tool"><span class="tname">patch</span><span class="tcontent">{&quot;success&quot;: true, &quot;diff&quot;: &quot;--- a//opt/data/kitaberkahteknik/admin/inde</span></div><div class="tool"><span class="tname">patch</span><span class="tcontent">{&quot;success&quot;: true, &quot;diff&quot;: &quot;--- a//opt/data/kitaberkahteknik/admin/inde</span></div></div>
-        </div>
-        <div class="card" style="--c:#6c757d">
-          <div class="card-head"><span class="emoji">⏰</span><div class="hd"><div class="name">Crypto Breakout Scanner </div><div class="desc">Cron job (otomatis)</div></div><span class="status">⚪</span></div>
-          <div class="meta"><span>💬 1 pesan</span><span>🛠 0 tool</span><span>🧠 ox-alpha</span></div>
-          <div class="title">“Crypto Breakout Scanner 6jam · Aug 26 18:00”</div>
-          <div class="times">aktif 2026-08-26 18:00 · status: idle</div>
-          <div class="tools"><div class="tool"><span class="tcontent">(belum ada tool-call)</span></div></div>
-        </div>
-        <div class="card" style="--c:#6c757d">
-          <div class="card-head"><span class="emoji">⏰</span><div class="hd"><div class="name">Crypto Breakout Scanner </div><div class="desc">Cron job (otomatis)</div></div><span class="status">⚪</span></div>
-          <div class="meta"><span>💬 22 pesan</span><span>🛠 10 tool</span><span>🧠 ox-alpha</span></div>
-          <div class="title">“Crypto Breakout Scanner 6jam · Aug 26 12:16”</div>
-          <div class="times">aktif 2026-08-26 12:00 · status: idle</div>
-          <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;-rw-r--r-- 1 hermes hermes 12502 Aug 26 07:23 /opt/data/cr</span></div><div class="tool"><span class="tname">read_file</span><span class="tcontent">{&quot;content&quot;: &quot;1|=== LAPISAN 1: CoinGecko ===\n2|  RAIN: +21.0%\n3|  DRV</span></div><div class="tool"><span class="tname">process</span><span class="tcontent">{&quot;status&quot;: &quot;exited&quot;, &quot;command&quot;: &quot;cd /opt/data/crypto_scanner &amp;&amp; timeou</span></div></div>
-        </div>
-        <div class="card" style="--c:#6c757d">
-          <div class="card-head"><span class="emoji">⏰</span><div class="hd"><div class="name">Crypto Breakout Scanner </div><div class="desc">Cron job (otomatis)</div></div><span class="status">⚪</span></div>
-          <div class="meta"><span>💬 12 pesan</span><span>🛠 5 tool</span><span>🧠 ox-alpha</span></div>
-          <div class="title">“Crypto Breakout Scanner 6jam · Aug 26 00:04”</div>
-          <div class="times">aktif 2026-08-26 00:00 · status: idle</div>
-          <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;TOP 10 BREAKOUT\n=== KONDISI MAKRO ===\n- Total mcap: $2.6</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;3156 /opt/data/crypto_scanner/top10.json\n&lt;class &#x27;dict&#x27;&gt;\n</span></div><div class="tool"><span class="tname">process</span><span class="tcontent">{&quot;status&quot;: &quot;exited&quot;, &quot;command&quot;: &quot;cd /opt/data/crypto_scanner &amp;&amp; timeou</span></div></div>
-        </div>
-        <div class="card" style="--c:#6c757d">
-          <div class="card-head"><span class="emoji">⏰</span><div class="hd"><div class="name">Crypto Breakout Scanner </div><div class="desc">Cron job (otomatis)</div></div><span class="status">⚪</span></div>
-          <div class="meta"><span>💬 19 pesan</span><span>🛠 9 tool</span><span>🧠 ox-alpha</span></div>
-          <div class="title">“Crypto Breakout Scanner 6jam · Aug 25 18:13”</div>
-          <div class="times">aktif 2026-08-25 18:00 · status: idle</div>
-          <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;TOP 10 BREAKOUT\n=== KONDISI MAKRO ===\n- Total mcap: $2.6</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;- RSI: harian; &gt;75 overbought, &gt;80 rawan koreksi\n- whale:</span></div><div class="tool"><span class="tname">read_file</span><span class="tcontent">{&quot;content&quot;: &quot;1|{\n2| \&quot;top\&quot;: [\n3|  {\n4|   \&quot;cid\&quot;: \&quot;kamino\&quot;,\n5| </span></div></div>
-        </div>
-        <div class="card" style="--c:#6c757d">
-          <div class="card-head"><span class="emoji">⏰</span><div class="hd"><div class="name">Crypto Breakout Scanner </div><div class="desc">Cron job (otomatis)</div></div><span class="status">⚪</span></div>
-          <div class="meta"><span>💬 22 pesan</span><span>🛠 10 tool</span><span>🧠 ox-alpha</span></div>
-          <div class="title">“Crypto Breakout Scanner 6jam · Aug 25 15:09”</div>
-          <div class="times">aktif 2026-08-25 14:56 · status: idle</div>
-          <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;TOP 10 BREAKOUT\n=== KONDISI MAKRO ===\n- Total mcap: $2.6</span></div><div class="tool"><span class="tname">read_file</span><span class="tcontent">{&quot;content&quot;: &quot;1|{\n2| \&quot;top\&quot;: [\n3|  {\n4|   \&quot;cid\&quot;: \&quot;jasmycoin\&quot;,\n</span></div><div class="tool"><span class="tname">process</span><span class="tcontent">{&quot;status&quot;: &quot;exited&quot;, &quot;command&quot;: &quot;cd /opt/data/crypto_scanner &amp;&amp; timeou</span></div></div>
-        </div>
-        <div class="card" style="--c:#6c757d">
-          <div class="card-head"><span class="emoji">⏰</span><div class="hd"><div class="name">Crypto Breakout Scanner </div><div class="desc">Cron job (otomatis)</div></div><span class="status">⚪</span></div>
-          <div class="meta"><span>💬 13 pesan</span><span>🛠 6 tool</span><span>🧠 ox-alpha</span></div>
-          <div class="title">“Crypto Breakout Scanner 6jam · Aug 25 12:06”</div>
-          <div class="times">aktif 2026-08-25 12:01 · status: idle</div>
-          <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;- RSI: harian; &gt;75 overbought, &gt;80 rawan koreksi\n- whale:</span></div><div class="tool"><span class="tname">read_file</span><span class="tcontent">{&quot;content&quot;: &quot;1|{\n2| \&quot;top\&quot;: [\n3|  {\n4|   \&quot;cid\&quot;: \&quot;jasmycoin\&quot;,\n</span></div><div class="tool"><span class="tname">process</span><span class="tcontent">{&quot;status&quot;: &quot;exited&quot;, &quot;command&quot;: &quot;cd /opt/data/crypto_scanner &amp;&amp; timeou</span></div></div>
-        </div></div>
-<footer>Hermes Office · di-generate otomatis dari /opt/data/state.db · konten = aktivitas nyata agent Hermes</footer>
+<div class="board">
+<div class="desk" style="--c:#80ed99">
+  <div class="stage">
+    <div class="bubble">🎁 Langkah Berikutnya Kontribusi FLOP</div>
+    <img class="char" src="sprites/employee-1.png" alt="FLOP Airdrop">
+    <div class="deskline"></div>
+  </div>
+  <div class="tag"><span class="dot" style="background:#80ed99"></span>FLOP Airdrop</div>
+  <div class="desc">Airdrop / Testnet</div>
+  <div class="meta"><span>💬 10</span><span>🛠 4</span><span>🧠 ox-alpha</span></div>
+  <div class="mini">aktif 2026-08-26 04:32</div>
+  <div class="tools"><div class="tool"><span class="tname">read_file</span><span class="tcontent">{&quot;content&quot;: &quot;1|&lt;div align=\&quot;center\&quot;&gt;\n2|\n3|# Technocore D…</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;total 60\ndrwxr-xr-x  5 hermes hermes    12 Aug…</span></div><div class="tool"><span class="tname">cronjob</span><span class="tcontent">{   &quot;success&quot;: true,   &quot;count&quot;: 4,   &quot;jobs&quot;: [     {       …</span></div></div>
+</div>
+<div class="desk" style="--c:#f72585">
+  <div class="stage">
+    <div class="bubble">📰 Penggunaan AI DeepSeek oleh Hacker China</div>
+    <img class="char" src="sprites/employee-3.png" alt="Berita">
+    <div class="deskline"></div>
+  </div>
+  <div class="tag"><span class="dot" style="background:#f72585"></span>Berita</div>
+  <div class="desc">Berita AI/Tech</div>
+  <div class="meta"><span>💬 73</span><span>🛠 31</span><span>🧠 ox-alpha</span></div>
+  <div class="mini">aktif 2026-08-25 16:08</div>
+  <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;243&quot;, &quot;exit_code&quot;: 0, &quot;error&quot;: null}</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;Mystery Ox Alpha Model Revealed To Be From Chin…</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;China’s Z.AI made Ox Alpha stealth model that r…</span></div></div>
+</div>
+<div class="desk" style="--c:#b0c4b1">
+  <div class="stage">
+    <div class="bubble">🔬 Coba Lagi Setelah Kegagalan</div>
+    <img class="char" src="sprites/security-audit-1.png" alt="Riset">
+    <div class="deskline"></div>
+  </div>
+  <div class="tag"><span class="dot" style="background:#b0c4b1"></span>Riset</div>
+  <div class="desc">Riset Crypto</div>
+  <div class="meta"><span>💬 230</span><span>🛠 103</span><span>🧠 deepseek-v4-flash-0731</span></div>
+  <div class="mini">aktif 2026-08-25 02:31</div>
+  <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;=== VIRTUAL (virtual-protocol) rank 107 ===\n  …</span></div><div class="tool"><span class="tname">write_file</span><span class="tcontent">{&quot;bytes_written&quot;: 3402, &quot;dirs_created&quot;: true, &quot;lint&quot;: {&quot;sta…</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;virtual-protocol | VIRTUAL | Virtuals Protocol …</span></div></div>
+</div>
+<div class="desk" style="--c:#4cc9f0">
+  <div class="stage">
+    <div class="bubble">🐦 Accessing Shared X Post Link</div>
+    <img class="char" src="sprites/Frontend-dev-1.png" alt="X @lahilapagi">
+    <div class="deskline"></div>
+  </div>
+  <div class="tag"><span class="dot" style="background:#4cc9f0"></span>X @lahilapagi</div>
+  <div class="desc">X / Sosmed</div>
+  <div class="meta"><span>💬 120</span><span>🛠 56</span><span>🧠 ox-alpha</span></div>
+  <div class="mini">aktif 2026-08-24 23:00</div>
+  <div class="tools"><div class="tool"><span class="tname">memory</span><span class="tcontent">{&quot;success&quot;: true, &quot;done&quot;: true, &quot;target&quot;: &quot;memory&quot;, &quot;usage&quot;…</span></div><div class="tool"><span class="tname">memory</span><span class="tcontent">{&quot;success&quot;: false, &quot;error&quot;: &quot;Operation 1 (replace): no entr…</span></div><div class="tool"><span class="tname">patch</span><span class="tcontent">{&quot;success&quot;: true, &quot;diff&quot;: &quot;--- a//opt/data/technocore-did-s…</span></div></div>
+</div>
+<div class="desk" style="--c:#ef476f">
+  <div class="stage">
+    <div class="bubble">🎬 Analisis Highlight Dokumenter BlackRock</div>
+    <img class="char" src="sprites/employee-2.png" alt="Konten/YouTube">
+    <div class="deskline"></div>
+  </div>
+  <div class="tag"><span class="dot" style="background:#ef476f"></span>Konten/YouTube</div>
+  <div class="desc">YouTube / Konten</div>
+  <div class="meta"><span>💬 308</span><span>🛠 137</span><span>🧠 ox-alpha</span></div>
+  <div class="mini">aktif 2026-08-22 05:30</div>
+  <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;copied&quot;, &quot;exit_code&quot;: 0, &quot;error&quot;: null}</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;-rw-r--r-- 1 hermes hermes 15846966 Aug 26 05:2…</span></div><div class="tool"><span class="tname">vision_analyze</span><span class="tcontent">Image loaded into your context — you can see it natively no…</span></div></div>
+</div>
+<div class="desk" style="--c:#ff9e00">
+  <div class="stage">
+    <div class="bubble">📡 Buat ulang topik berita AI terhapus</div>
+    <img class="char" src="sprites/employee-1.png" alt="Monitor Berita">
+    <div class="deskline"></div>
+  </div>
+  <div class="tag"><span class="dot" style="background:#ff9e00"></span>Monitor Berita</div>
+  <div class="desc">Monitor Berita</div>
+  <div class="meta"><span>💬 38</span><span>🛠 16</span><span>🧠 ox-alpha</span></div>
+  <div class="mini">aktif 2026-08-21 17:20</div>
+  <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;📰 **10 Berita AI/Tech Terbaik — Ide Konten X**\…</span></div><div class="tool"><span class="tname">patch</span><span class="tcontent">{&quot;success&quot;: true, &quot;diff&quot;: &quot;--- a//opt/data/home/.hermes/scr…</span></div><div class="tool"><span class="tname">patch</span><span class="tcontent">{&quot;success&quot;: true, &quot;diff&quot;: &quot;--- a//opt/data/home/.hermes/scr…</span></div></div>
+</div>
+<div class="desk" style="--c:#6c757d">
+  <div class="stage">
+    <div class="bubble">💼 Klarifikasi Bahas Nomor Satu</div>
+    <img class="char" src="sprites/employee-2.png" alt="thr 124">
+    <div class="deskline"></div>
+  </div>
+  <div class="tag"><span class="dot" style="background:#6c757d"></span>thr 124</div>
+  <div class="desc">Topik</div>
+  <div class="meta"><span>💬 20</span><span>🛠 8</span><span>🧠 ling-3.0-flash</span></div>
+  <div class="mini">aktif 2026-08-21 06:01</div>
+  <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;no cron output dir\n./scripts/technews_monitor.…</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;Error: &lt;urlopen error Remote end closed connect…</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;&lt;!doctype html&gt;&lt;html lang=\&quot;en-US\&quot; dir=\&quot;ltr\&quot;…</span></div></div>
+</div>
+<div class="desk" style="--c:#ffd166">
+  <div class="stage">
+    <div class="bubble">🛠️ Akses Repo GitHub Berkah Teknik</div>
+    <img class="char" src="sprites/dev-1.png" alt="kitaberkahteknik">
+    <div class="deskline"></div>
+  </div>
+  <div class="tag"><span class="dot" style="background:#ffd166"></span>kitaberkahteknik</div>
+  <div class="desc">Web Service AC</div>
+  <div class="meta"><span>💬 44</span><span>🛠 19</span><span>🧠 ox-alpha</span></div>
+  <div class="mini">aktif 2026-08-21 05:37</div>
+  <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;[main 0fd0b8b] Rekap pendapatan ikut periode cu…</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;26 Jul  -&gt; 2026-07 | 26 Jul s/d 25 Agu 2026\n10…</span></div><div class="tool"><span class="tname">patch</span><span class="tcontent">{&quot;success&quot;: true, &quot;diff&quot;: &quot;--- a//opt/data/kitaberkahteknik…</span></div></div>
+</div>
+<div class="desk" style="--c:#6c757d">
+  <div class="stage">
+    <div class="bubble">⏰ Crypto Breakout Scanner 6jam · Aug 26 18:…</div>
+    <img class="char" src="sprites/dev-2.png" alt="Crypto Breakout Scanne">
+    <div class="deskline"></div>
+  </div>
+  <div class="tag"><span class="dot" style="background:#6c757d"></span>Crypto Breakout Scanne</div>
+  <div class="desc">Cron (otomatis)</div>
+  <div class="meta"><span>💬 1</span><span>🛠 0</span><span>🧠 ox-alpha</span></div>
+  <div class="mini">aktif 2026-08-26 18:00</div>
+  <div class="tools"><div class="tool tcontent">(belum ada tool-call)</div></div>
+</div>
+<div class="desk" style="--c:#6c757d">
+  <div class="stage">
+    <div class="bubble">⏰ Crypto Breakout Scanner 6jam · Aug 26 12:…</div>
+    <img class="char" src="sprites/dev-2.png" alt="Crypto Breakout Scanne">
+    <div class="deskline"></div>
+  </div>
+  <div class="tag"><span class="dot" style="background:#6c757d"></span>Crypto Breakout Scanne</div>
+  <div class="desc">Cron (otomatis)</div>
+  <div class="meta"><span>💬 22</span><span>🛠 10</span><span>🧠 ox-alpha</span></div>
+  <div class="mini">aktif 2026-08-26 12:00</div>
+  <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;-rw-r--r-- 1 hermes hermes 12502 Aug 26 07:23 /…</span></div><div class="tool"><span class="tname">read_file</span><span class="tcontent">{&quot;content&quot;: &quot;1|=== LAPISAN 1: CoinGecko ===\n2|  RAIN: +21.…</span></div></div>
+</div>
+<div class="desk" style="--c:#6c757d">
+  <div class="stage">
+    <div class="bubble">⏰ Crypto Breakout Scanner 6jam · Aug 26 00:…</div>
+    <img class="char" src="sprites/dev-2.png" alt="Crypto Breakout Scanne">
+    <div class="deskline"></div>
+  </div>
+  <div class="tag"><span class="dot" style="background:#6c757d"></span>Crypto Breakout Scanne</div>
+  <div class="desc">Cron (otomatis)</div>
+  <div class="meta"><span>💬 12</span><span>🛠 5</span><span>🧠 ox-alpha</span></div>
+  <div class="mini">aktif 2026-08-26 00:00</div>
+  <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;TOP 10 BREAKOUT\n=== KONDISI MAKRO ===\n- Total…</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;3156 /opt/data/crypto_scanner/top10.json\n&lt;clas…</span></div></div>
+</div>
+<div class="desk" style="--c:#6c757d">
+  <div class="stage">
+    <div class="bubble">⏰ Crypto Breakout Scanner 6jam · Aug 25 18:…</div>
+    <img class="char" src="sprites/dev-2.png" alt="Crypto Breakout Scanne">
+    <div class="deskline"></div>
+  </div>
+  <div class="tag"><span class="dot" style="background:#6c757d"></span>Crypto Breakout Scanne</div>
+  <div class="desc">Cron (otomatis)</div>
+  <div class="meta"><span>💬 19</span><span>🛠 9</span><span>🧠 ox-alpha</span></div>
+  <div class="mini">aktif 2026-08-25 18:00</div>
+  <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;TOP 10 BREAKOUT\n=== KONDISI MAKRO ===\n- Total…</span></div><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;- RSI: harian; &gt;75 overbought, &gt;80 rawan koreks…</span></div></div>
+</div>
+<div class="desk" style="--c:#6c757d">
+  <div class="stage">
+    <div class="bubble">⏰ Crypto Breakout Scanner 6jam · Aug 25 15:…</div>
+    <img class="char" src="sprites/dev-2.png" alt="Crypto Breakout Scanne">
+    <div class="deskline"></div>
+  </div>
+  <div class="tag"><span class="dot" style="background:#6c757d"></span>Crypto Breakout Scanne</div>
+  <div class="desc">Cron (otomatis)</div>
+  <div class="meta"><span>💬 22</span><span>🛠 10</span><span>🧠 ox-alpha</span></div>
+  <div class="mini">aktif 2026-08-25 14:56</div>
+  <div class="tools"><div class="tool"><span class="tname">terminal</span><span class="tcontent">{&quot;output&quot;: &quot;TOP 10 BREAKOUT\n=== KONDISI MAKRO ===\n- Total…</span></div><div class="tool"><span class="tname">read_file</span><span class="tcontent">{&quot;content&quot;: &quot;1|{\n2| \&quot;top\&quot;: [\n3|  {\n4|   \&quot;cid\&quot;: \&quot;jas…</span></div></div>
+</div></div>
+<footer>Hermes Office · pixel-art · konten = aktivitas nyata agent Hermes dari /opt/data/state.db</footer>
 </div></body></html>
